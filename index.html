@@ -46,18 +46,53 @@
 
         <p>Caso eu queira colocar os eventos dentro do código HTML e dps usá-los no JavaScript: </p>
         <pre><code>
-    &lt;!DOCTYPE html&gt;
-        &lt;body&gt;
-            &lt;div id="area" onclick="clicar()"&gt;&lt;/div&gt;
-            &lt;script&gt;
-                var d = document.querySelector(div#area)
+    &lt;!<mark style="color: rgb(26, 105, 209); background-color: black;">DOCTYPE</mark> html&gt;
+        &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">body</mark>&gt;
+            &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">div</mark> <mark style="color: rgb(127, 199, 247); background-color: black;">id</mark>="area" <mark style="color: rgb(127, 199, 247); background-color: black;">onclick</mark>="clicar()"&gt;Clique aqui!&lt;/div&gt;
+            &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">script</mark>&gt;
+                <mark style="color: rgb(26, 105, 209); background-color: black;">var</mark> d = document.querySelector(div#area)
 
-                function clicar() {
+                <mark style="color: rgb(26, 105, 209); background-color: black;">function</mark> clicar() {
                     a.innerText = 'Clicou'
                 }
-            &lt;/script&gt;
-        &lt;/body&gt;
+            &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">/script</mark>&gt;
+        &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">/body</mark>&gt;
         </code></pre>
+        
+        <h3>Eventos de dentro do JavaScript</h3>
+        <p>Caso queira selecionar os objetos do site de dentro do código JavaScript, use o <code><em>addEventListener('evento', nome do evento):</em></code></p>
+        <div></div>
+        <pre><code>
+    &lt;!<mark style="color: rgb(26, 105, 209); background-color: black;">DOCTYPE</mark> html&gt;
+        &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">body</mark>&gt;
+            &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">div</mark> <mark style="color: rgb(127, 199, 247); background-color: black;">id</mark>="area"&gt;Clique aqui!&lt;<mark style="color: rgb(26, 105, 209); background-color: black;">/div</mark>&gt;
+            &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">script</mark>&gt;
+                <mark style="color: rgb(26, 105, 209); background-color: black;">var</mark> d = document.querySelector(div#area)
+                d.addEventListener('click', clicar)
+                <mark style="color: rgb(26, 105, 209); background-color: black;">function</mark> clicar() {
+                    d.innerText = 'Clicou'
+                }
+            &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">/script</mark>&gt;
+        &lt;<mark style="color: rgb(26, 105, 209); background-color: black;">/body</mark>&gt;
+        </code></pre>
+
+        <h2>Médotos de inserão de texto</h2>
+        <p>Os textos podem ser inseridos de 3 formas (aprendidas até agora):</p>
+        <h3>Substituição completa e repetitiva</h3>
+        <pre><code>
+    document.write
+        </code></pre>
+        <p>Essa forma substitui todo o texto da página e, se usado em algum código de repetião, não irá substituir o texto que já foi adicionado, mas sim adicionar um ao lado do outro enquanto se repete.</p>
+        <h3>Substituição objetiva</h3>
+        <pre><code>
+    document.innerText
+        </code></pre>
+        <p>Essa forma substitui o texto requisitado, sem repetir de nenhuma forma. Porém, só colocaráo texto cru, sem a adição de algum atributo ou tag do HTML.</p>
+        <h3>Adição do HTML</h3>
+        <pre><code>
+    document.innerHTML
+        </code></pre>
+        <p>Essa forma adiciona todos as tags atribuidas ao elemento no HTML.</p>
     </main>
 </body>
 </html>
